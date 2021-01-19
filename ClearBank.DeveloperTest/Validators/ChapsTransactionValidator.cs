@@ -5,7 +5,7 @@ namespace ClearBank.DeveloperTest.Validators
 {
     public class ChapsTransactionValidator : ITransactionValidator
     {
-        public TransactionValidationResult Validate(Account account, MakePaymentRequest request)
+        public TransactionValidationResult Validate(Account account, IMakePaymentRequest request)
         {
             if((account.AllowedPaymentSchemes & AllowedPaymentSchemes.Chaps) == 0)
             {

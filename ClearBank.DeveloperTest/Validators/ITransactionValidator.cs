@@ -7,6 +7,6 @@ namespace ClearBank.DeveloperTest.Validators
 {
     public interface ITransactionValidator
     {
-        TransactionValidationResult Validate(Account account, MakePaymentRequest request);
+        TransactionValidationResult Validate(Account account, IMakePaymentRequest request);
     }
 }

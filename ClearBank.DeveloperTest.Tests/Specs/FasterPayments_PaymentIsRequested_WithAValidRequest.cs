@@ -16,16 +16,11 @@ namespace ClearBank.DeveloperTest.Tests.Specs
     {
         public FasterPayments_PaymentIsRequested_WithAValidRequest()
         {
-            Given(
-                () =>
-                {
-                    The<IAccountDataStore>();
-                    SetThe<ITransactionValidator>().To(new FasterPaymentsTransactionValidator());
-                });
+            Given(() => The<IAccountDataStore>());
 
             When(
                 () => Subject.MakePayment(
-                    new MakePaymentRequest
+                    new FasterPaymentsMakePaymentRequest
                 {
                     DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_FASTERPAYMENTS,
                     PaymentScheme = PaymentScheme.FasterPayments,

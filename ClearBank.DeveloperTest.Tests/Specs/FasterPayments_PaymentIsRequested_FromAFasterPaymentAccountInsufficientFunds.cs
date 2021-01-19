@@ -17,15 +17,10 @@ namespace ClearBank.DeveloperTest.Tests.Specs
     {
         public FasterPayments_PaymentIsRequested_FromAFasterPaymentAccountInsufficientFunds()
         {
-            Given(
-                () =>
-                {
-                    The<IAccountDataStore>();
-                    SetThe<ITransactionValidator>().To(new FasterPaymentsTransactionValidator());
-                });
+            Given(() => The<IAccountDataStore>());
             When(
                 () => Subject.MakePayment(
-                    new MakePaymentRequest
+                    new FasterPaymentsMakePaymentRequest
                 {
                     DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_FASTERPAYMENTS_INSUFFICENT_FUNDS,
                     PaymentScheme = PaymentScheme.FasterPayments

@@ -17,15 +17,10 @@ namespace ClearBank.DeveloperTest.Tests.Specs
     {
         public Chaps_PaymentIsRequested_FromANonChapsAccount()
         {
-            Given(
-                () =>
-                {
-                    The<IAccountDataStore>();
-                    SetThe<ITransactionValidator>().To(new ChapsTransactionValidator());
-                });
+            Given(() => The<IAccountDataStore>());
             When(
                 () => Subject.MakePayment(
-                    new MakePaymentRequest
+                    new ChapsMakePaymentRequest
                 {
                     DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_FASTERPAYMENTS,
                     PaymentScheme = PaymentScheme.Chaps
