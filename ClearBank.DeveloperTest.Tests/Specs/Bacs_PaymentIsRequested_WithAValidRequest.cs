@@ -19,7 +19,6 @@ namespace ClearBank.DeveloperTest.Tests.Specs
             Given(
                 () =>
                 {
-                    var account = The<IAccountDataStore>().GetAccount(AccountNumberConstants.ACCOUNT_WITH_BACS);
                     The<IAccountDataStore>();
                     SetThe<ITransactionValidator>().To(new BacsTransactionValidator());
                 });
