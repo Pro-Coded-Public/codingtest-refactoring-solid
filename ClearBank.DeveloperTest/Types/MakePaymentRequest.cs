@@ -17,6 +17,6 @@ namespace ClearBank.DeveloperTest.Types
 
         public abstract PaymentScheme PaymentScheme { get; }
 
-        public virtual ITransactionValidator TransactionValidator { get; set; }
+        public abstract ITransactionValidator TransactionValidator { get; }
     }
 }
