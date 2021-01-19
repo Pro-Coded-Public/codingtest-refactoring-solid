@@ -17,19 +17,10 @@ namespace ClearBank.DeveloperTest.Tests.Specs
     {
         public PaymentIsRequested_ExceptionFromAccountDataStore()
         {
-            Given(
-                () =>
-                {
-                    The<IAccountDataStore>();
-                    SetThe<ITransactionValidator>().To(new BacsTransactionValidator());
-                });
+            Given(() => The<IAccountDataStore>());
             When(
                 () => Subject.MakePayment(
-                    new MakePaymentRequest
-                {
-                    DebtorAccountNumber = AccountNumberConstants.ACCOUNT_EXCEPTION,
-                    PaymentScheme = PaymentScheme.Bacs
-                }));
+                    new BacsMakePaymentRequest { DebtorAccountNumber = AccountNumberConstants.ACCOUNT_EXCEPTION }));
         }
 
         [Fact]

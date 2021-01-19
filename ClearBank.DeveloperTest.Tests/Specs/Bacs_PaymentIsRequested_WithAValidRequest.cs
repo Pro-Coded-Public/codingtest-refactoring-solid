@@ -16,19 +16,10 @@ namespace ClearBank.DeveloperTest.Tests.Specs
     {
         public Bacs_PaymentIsRequested_WithAValidRequest()
         {
-            Given(
-                () =>
-                {
-                    The<IAccountDataStore>();
-                    SetThe<ITransactionValidator>().To(new BacsTransactionValidator());
-                });
+            Given(() => The<IAccountDataStore>());
             When(
                 () => Subject.MakePayment(
-                    new MakePaymentRequest
-                {
-                    DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_BACS,
-                    PaymentScheme = PaymentScheme.Bacs
-                }));
+                    new BacsMakePaymentRequest { DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_BACS }));
         }
 
         [Fact]

@@ -1,8 +1,11 @@
-﻿using System;
+﻿
+using System;
+
+using ClearBank.DeveloperTest.Validators;
 
 namespace ClearBank.DeveloperTest.Types
 {
-    public class MakePaymentRequest
+    public abstract class MakePaymentRequest
     {
         public decimal Amount { get; set; }
 
@@ -12,6 +15,8 @@ namespace ClearBank.DeveloperTest.Types
 
         public DateTime PaymentDate { get; set; }
 
-        public PaymentScheme PaymentScheme { get; set; }
+        public abstract PaymentScheme PaymentScheme { get; }
+
+        public virtual ITransactionValidator TransactionValidator { get; set; }
     }
 }

@@ -25,10 +25,9 @@ namespace ClearBank.DeveloperTest.Tests.Specs
                 });
             When(
                 () => Subject.MakePayment(
-                    new MakePaymentRequest
+                    new FasterPaymentsMakePaymentRequest
                 {
-                    DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_BACS,
-                    PaymentScheme = PaymentScheme.FasterPayments
+                    DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_BACS
                 }));
         }
 
