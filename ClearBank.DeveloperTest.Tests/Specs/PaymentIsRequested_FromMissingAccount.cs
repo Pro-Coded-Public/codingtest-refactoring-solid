@@ -17,18 +17,14 @@ namespace ClearBank.DeveloperTest.Tests.Specs
     {
         public PaymentIsRequested_FromMissingAccount()
         {
-            Given(
-                () =>
-                {
-                    The<IAccountDataStore>();
-                    SetThe<ITransactionValidator>().To(new BacsTransactionValidator());
-                });
+            Given(() => The<IAccountDataStore>());
             When(
                 () => Subject.MakePayment(
                     new MakePaymentRequest
                 {
                     DebtorAccountNumber = AccountNumberConstants.ACCOUNT_MISSING,
-                    PaymentScheme = PaymentScheme.Bacs
+                    PaymentScheme = PaymentScheme.Bacs,
+                    TransactionValidator = new BacsTransactionValidator()
                 }));
         }
 

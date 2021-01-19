@@ -1,4 +1,7 @@
-﻿using System;
+﻿
+using System;
+
+using ClearBank.DeveloperTest.Validators;
 
 namespace ClearBank.DeveloperTest.Types
 {
@@ -13,5 +16,7 @@ namespace ClearBank.DeveloperTest.Types
         public DateTime PaymentDate { get; set; }
 
         public PaymentScheme PaymentScheme { get; set; }
+
+        public ITransactionValidator TransactionValidator { get; set; }
     }
 }

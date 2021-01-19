@@ -16,18 +16,14 @@ namespace ClearBank.DeveloperTest.Tests.Specs
     {
         public Chaps_PaymentIsRequested_WithAValidRequest()
         {
-            Given(
-                () =>
-                {
-                    The<IAccountDataStore>();
-                    SetThe<ITransactionValidator>().To(new ChapsTransactionValidator());
-                });
+            Given(() => The<IAccountDataStore>());
             When(
                 () => Subject.MakePayment(
                     new MakePaymentRequest
                 {
                     DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_CHAPS,
-                    PaymentScheme = PaymentScheme.Chaps
+                    PaymentScheme = PaymentScheme.Chaps,
+                    TransactionValidator = new ChapsTransactionValidator()
                 }));
         }
 

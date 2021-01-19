@@ -10,12 +10,11 @@ namespace ClearBank.DeveloperTest.Services
     public class PaymentService : IPaymentService
     {
         readonly IAccountDataStore _accountDataStore;
-        readonly ITransactionValidator _transactionValidator;
 
-        public PaymentService(IAccountDataStore accountDataStore, ITransactionValidator transactionValidator)
+        public PaymentService(IAccountDataStore accountDataStore)
         {
-            _transactionValidator = transactionValidator ??
-                throw new ArgumentException("transactionValidator cannot be null");
+            //_transactionValidator = transactionValidator ??
+            //    throw new ArgumentException("transactionValidator cannot be null");
             _accountDataStore = accountDataStore ?? throw new ArgumentException("accountDataStore cannot be null");
         }
 
@@ -31,7 +30,7 @@ namespace ClearBank.DeveloperTest.Services
                     return MakePaymentResult.FailureResult(FailureCodeConstants.ACCOUNT_NOT_FOUND);
                 }
 
-                var transactionValidationResult = _transactionValidator.Validate(account, request);
+                var transactionValidationResult = request.TransactionValidator.Validate(account, request);
 
                 if(transactionValidationResult.IsValid)
                 {
