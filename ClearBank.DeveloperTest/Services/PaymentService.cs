@@ -12,11 +12,7 @@ namespace ClearBank.DeveloperTest.Services
         readonly IAccountDataStore _accountDataStore;
 
         public PaymentService(IAccountDataStore accountDataStore)
-        {
-            //_transactionValidator = transactionValidator ??
-            //    throw new ArgumentException("transactionValidator cannot be null");
-            _accountDataStore = accountDataStore ?? throw new ArgumentException("accountDataStore cannot be null");
-        }
+        { _accountDataStore = accountDataStore ?? throw new ArgumentException("accountDataStore cannot be null"); }
 
         //TODO: This should ideally be async
         public MakePaymentResult MakePayment(MakePaymentRequest request)
