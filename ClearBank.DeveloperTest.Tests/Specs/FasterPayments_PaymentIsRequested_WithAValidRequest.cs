@@ -20,7 +20,8 @@ namespace ClearBank.DeveloperTest.Tests.Specs
                 () =>
                 {
                     The<IAccountDataStore>();
-                    SetThe<ITransactionValidator>().To(new FasterPaymentsTransactionValidator());
+                    SetThe<ITransactionValidator>()
+                        .To(TransactionValidatorFactory.CreateFasterPaymentsTransactionValidator());
                 });
 
             When(

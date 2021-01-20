@@ -21,7 +21,7 @@ namespace ClearBank.DeveloperTest.Tests.Specs
                 () =>
                 {
                     The<IAccountDataStore>();
-                    SetThe<ITransactionValidator>().To(new BacsTransactionValidator());
+                    SetThe<ITransactionValidator>().To(TransactionValidatorFactory.CreateBacsTransactionValidator());
                 });
             When(
                 () => Subject.MakePayment(

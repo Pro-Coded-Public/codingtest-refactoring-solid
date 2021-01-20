@@ -20,7 +20,7 @@ namespace ClearBank.DeveloperTest.Tests.Specs
                 () =>
                 {
                     The<IAccountDataStore>();
-                    SetThe<ITransactionValidator>().To(new ChapsTransactionValidator());
+                    SetThe<ITransactionValidator>().To(TransactionValidatorFactory.CreateChapsTransactionValidator());
                 });
             When(
                 () => Subject.MakePayment(
