@@ -8,7 +8,7 @@
 
 2. Create a set of specifications according to the intent of original code, combined with the high-level description in the candidate brief. 
 
-   Specifications were put in place prior to refactoring, apart from introduction of an interface to decouple the AccountDataStore and BAckupDataStor.
+   Specifications were put in place prior to refactoring, apart from the introduction of an interface to decouple the AccountDataStore and BackupDataStore.
 
    The BDD style test framework 'Chill' is used for its concise, expressive approach that also enhances readability of tests, with a clear statement of intent, without verbosity.
 
