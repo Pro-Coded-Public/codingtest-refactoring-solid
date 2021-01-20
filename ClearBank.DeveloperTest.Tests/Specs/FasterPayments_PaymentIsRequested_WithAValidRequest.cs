@@ -23,7 +23,7 @@ namespace ClearBank.DeveloperTest.Tests.Specs
                 {
                     DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_FASTERPAYMENTS,
                     PaymentScheme = PaymentScheme.FasterPayments,
-                    TransactionValidator = new FasterPaymentsTransactionValidator(),
+                    TransactionValidator = TransactionValidatorFactory.CreateFasterPaymentsTransactionValidator(),
                     Amount = 1
                 }));
         }

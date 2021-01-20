@@ -23,7 +23,7 @@ namespace ClearBank.DeveloperTest.Tests.Specs
                 {
                     DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_BACS,
                     PaymentScheme = PaymentScheme.Bacs,
-                    TransactionValidator = new BacsTransactionValidator()
+                    TransactionValidator = TransactionValidatorFactory.CreateBacsTransactionValidator()
                 }));
         }
 

@@ -24,7 +24,7 @@ namespace ClearBank.DeveloperTest.Tests.Specs
                 {
                     DebtorAccountNumber = AccountNumberConstants.ACCOUNT_EXCEPTION,
                     PaymentScheme = PaymentScheme.Bacs,
-                    TransactionValidator = new BacsTransactionValidator()
+                    TransactionValidator = TransactionValidatorFactory.CreateBacsTransactionValidator()
                 }));
         }
 

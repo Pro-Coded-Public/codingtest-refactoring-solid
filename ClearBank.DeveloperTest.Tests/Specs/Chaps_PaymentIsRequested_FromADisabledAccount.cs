@@ -24,7 +24,7 @@ namespace ClearBank.DeveloperTest.Tests.Specs
                 {
                     DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_CHAPS_DISABLED,
                     PaymentScheme = PaymentScheme.Chaps,
-                    TransactionValidator = new ChapsTransactionValidator()
+                    TransactionValidator = TransactionValidatorFactory.CreateChapsTransactionValidator()
                 }));
         }
 
