@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ClearBank.DeveloperTest.Validators
+﻿namespace ClearBank.DeveloperTest.Validators
 {
     public static class TransactionValidatorFactory
     {
