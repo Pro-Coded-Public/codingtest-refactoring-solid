@@ -17,6 +17,9 @@ namespace ClearBank.DeveloperTest.Types
 
         public PaymentScheme PaymentScheme { get; set; }
 
-        public ITransactionValidator TransactionValidator { get; set; } = new FasterPaymentsTransactionValidator();
+        public ITransactionValidator TransactionValidator
+        {
+            get;
+        } = TransactionValidatorFactory.CreateFasterPaymentsTransactionValidator();
     }
 }
