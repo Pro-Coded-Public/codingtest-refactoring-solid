@@ -2,7 +2,7 @@
 
 namespace ClearBank.DeveloperTest.Types
 {
-    public class MakePaymentResult
+    public class MakePaymentResult : IMakePaymentResult
     {
         public static MakePaymentResult FailureResult(int failureCode = FailureCodeConstants.UNKNOWN)
         { return new MakePaymentResult { Success = false, FailureCode = failureCode }; }

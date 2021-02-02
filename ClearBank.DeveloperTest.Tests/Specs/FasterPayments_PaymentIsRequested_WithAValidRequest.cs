@@ -12,7 +12,7 @@ using Xunit;
 
 namespace ClearBank.DeveloperTest.Tests.Specs
 {
-    public class FasterPayments_PaymentIsRequested_WithAValidRequest : GivenSubject<PaymentService, MakePaymentResult>
+    public class FasterPayments_PaymentIsRequested_WithAValidRequest : GivenSubject<PaymentService, IMakePaymentResult>
     {
         public FasterPayments_PaymentIsRequested_WithAValidRequest()
         {

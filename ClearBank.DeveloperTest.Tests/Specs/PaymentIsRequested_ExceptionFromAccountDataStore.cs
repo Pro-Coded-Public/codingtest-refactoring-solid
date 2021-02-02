@@ -13,7 +13,7 @@ using Xunit;
 
 namespace ClearBank.DeveloperTest.Tests.Specs
 {
-    public class PaymentIsRequested_ExceptionFromAccountDataStore : GivenSubject<PaymentService, MakePaymentResult>
+    public class PaymentIsRequested_ExceptionFromAccountDataStore : GivenSubject<PaymentService, IMakePaymentResult>
     {
         public PaymentIsRequested_ExceptionFromAccountDataStore()
         {

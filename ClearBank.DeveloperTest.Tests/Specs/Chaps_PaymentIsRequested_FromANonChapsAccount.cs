@@ -13,7 +13,7 @@ using Xunit;
 
 namespace ClearBank.DeveloperTest.Tests.Specs
 {
-    public class Chaps_PaymentIsRequested_FromANonChapsAccount : GivenSubject<PaymentService, MakePaymentResult>
+    public class Chaps_PaymentIsRequested_FromANonChapsAccount : GivenSubject<PaymentService, IMakePaymentResult>
     {
         public Chaps_PaymentIsRequested_FromANonChapsAccount()
         {

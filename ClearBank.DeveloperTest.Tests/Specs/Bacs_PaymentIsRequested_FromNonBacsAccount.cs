@@ -13,7 +13,7 @@ using Xunit;
 
 namespace ClearBank.DeveloperTest.Tests.Specs
 {
-    public class Bacs_PaymentIsRequested_FromNonBacsAccount : GivenSubject<PaymentService, MakePaymentResult>
+    public class Bacs_PaymentIsRequested_FromNonBacsAccount : GivenSubject<PaymentService, IMakePaymentResult>
     {
         public Bacs_PaymentIsRequested_FromNonBacsAccount()
         {
