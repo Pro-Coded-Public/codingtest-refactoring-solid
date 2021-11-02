@@ -2,7 +2,8 @@
 {
     public static class TransactionValidatorFactory
     {
-        public static ITransactionValidator CreateBacsTransactionValidator() { return new BacsTransactionValidator(); }
+        public static ITransactionValidator CreateBacsTransactionValidator()
+        { return new BacsTransactionValidator(); }
 
         public static ITransactionValidator CreateChapsTransactionValidator()
         { return new ChapsTransactionValidator(); }
