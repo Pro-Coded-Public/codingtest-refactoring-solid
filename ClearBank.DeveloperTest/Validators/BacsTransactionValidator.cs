@@ -1,18 +1,8 @@
-﻿using ClearBank.DeveloperTest.Constants;
-using ClearBank.DeveloperTest.Types;
+﻿namespace ClearBank.DeveloperTest.Validators;
 
-namespace ClearBank.DeveloperTest.Validators
+public class BacsTransactionValidator : ITransactionValidator
 {
-    public class BacsTransactionValidator : ITransactionValidator
-    {
-        public TransactionValidationResult Validate(Account account, MakePaymentRequest request)
-        {
-            if((account.AllowedPaymentSchemes & AllowedPaymentSchemes.Bacs) == 0)
-            {
-                return TransactionValidationResult.FailureResult(FailureCodeConstants.UNSUPPORTED_PAYMENT_SCHEME);
-            }
-
-            return TransactionValidationResult.SuccessResult();
-        }
-    }
+    public TransactionValidationResult Validate(Account account, MakePaymentRequest request) => (account.AllowedPaymentSchemes & AllowedPaymentSchemes.Bacs) == 0
+            ? TransactionValidationResult.FailureResult(FailureCodeConstants.UNSUPPORTED_PAYMENT_SCHEME)
+            : TransactionValidationResult.SuccessResult();
 }

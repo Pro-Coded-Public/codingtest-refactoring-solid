@@ -1,16 +1,4 @@
-﻿using Chill;
-
-using ClearBank.DeveloperTest.Data;
-using ClearBank.DeveloperTest.Services;
-using ClearBank.DeveloperTest.Tests.Constants;
-using ClearBank.DeveloperTest.Types;
-using ClearBank.DeveloperTest.Validators;
-
-using FluentAssertions;
-
-using Xunit;
-
-namespace ClearBank.DeveloperTest.Tests.Specs
+﻿namespace ClearBank.DeveloperTest.Tests.Specs
 {
     public class FasterPayments_PaymentIsRequested_WithAValidRequest : GivenSubject<PaymentService, IMakePaymentResult>
     {
@@ -27,11 +15,11 @@ namespace ClearBank.DeveloperTest.Tests.Specs
             When(
                 () => Subject.MakePayment(
                     new MakePaymentRequest
-                {
-                    DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_FASTERPAYMENTS,
-                    PaymentScheme = PaymentScheme.FasterPayments,
-                    Amount = 1
-                }));
+                    {
+                        DebtorAccountNumber = AccountNumberConstants.ACCOUNT_WITH_FASTERPAYMENTS,
+                        PaymentScheme = PaymentScheme.FasterPayments,
+                        Amount = 1
+                    }));
         }
 
         [Fact]
