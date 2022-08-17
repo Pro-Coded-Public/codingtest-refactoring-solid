@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ClearBank.DeveloperTest.Types;
+﻿namespace ClearBank.DeveloperTest.Types;
 
 [Flags]
 public enum AllowedPaymentSchemes

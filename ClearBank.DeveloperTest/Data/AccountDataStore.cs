@@ -1,5 +1,4 @@
-﻿
-namespace ClearBank.DeveloperTest.Data;
+﻿namespace ClearBank.DeveloperTest.Data;
 
 public class AccountDataStore : IAccountDataStore
 {

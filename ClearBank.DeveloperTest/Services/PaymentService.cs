@@ -1,5 +1,4 @@
-﻿using System;
-using ClearBank.DeveloperTest.Data;
+﻿using ClearBank.DeveloperTest.Data;
 using ClearBank.DeveloperTest.Validators;
 
 namespace ClearBank.DeveloperTest.Services;
