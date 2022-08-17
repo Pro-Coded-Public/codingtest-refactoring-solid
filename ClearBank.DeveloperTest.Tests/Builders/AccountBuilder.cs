@@ -1,68 +1,62 @@
 ﻿
-using ClearBank.DeveloperTest.Types;
+namespace ClearBank.DeveloperTest.Tests.Builders;
 
-namespace ClearBank.DeveloperTest.Tests.Builders
+/// <summary>
+/// A builder pattern is used to create repeatable examples of test data
+/// </summary>
+public class AccountBuilder
 {
-    /// <summary>
-    /// A builder pattern is used to create repeatable examples of test data
-    /// </summary>
-    public class AccountBuilder
+    private readonly Account _account;
+
+    public AccountBuilder(string accountNumber) => _account = new Account
     {
-        readonly Account _account;
+        AccountNumber = accountNumber,
+        AllowedPaymentSchemes = AllowedPaymentSchemes.Bacs,
+        Balance = 100,
+        Status = AccountStatus.Live
+    };
 
-        public AccountBuilder(string accountNumber)
-        {
-            _account = new Account
-            {
-                AccountNumber = accountNumber,
-                AllowedPaymentSchemes = AllowedPaymentSchemes.Bacs,
-                Balance = 100,
-                Status = AccountStatus.Live
-            };
-        }
+    public Account Build() => _account;
 
-        public Account Build() { return _account; }
+    public AccountBuilder WithAccountNumber(string accountNumber)
+    {
+        _account.AccountNumber = accountNumber;
 
-        public AccountBuilder WithAccountNumber(string accountNumber)
-        {
-            _account.AccountNumber = accountNumber;
+        return this;
+    }
 
-            return this;
-        }
+    public AccountBuilder WithBacs()
+    {
+        _account.AllowedPaymentSchemes = AllowedPaymentSchemes.Bacs;
 
-        public AccountBuilder WithBacs()
-        {
-            _account.AllowedPaymentSchemes = AllowedPaymentSchemes.Bacs;
+        return this;
+    }
 
-            return this;
-        }
+    public AccountBuilder WithChaps()
+    {
+        _account.AllowedPaymentSchemes = AllowedPaymentSchemes.Chaps;
 
-        public AccountBuilder WithChaps()
-        {
-            _account.AllowedPaymentSchemes = AllowedPaymentSchemes.Chaps;
+        return this;
+    }
 
-            return this;
-        }
+    public AccountBuilder WithFasterPayments()
+    {
+        _account.AllowedPaymentSchemes = AllowedPaymentSchemes.FasterPayments;
 
-        public AccountBuilder WithFasterPayments()
-        {
-            _account.AllowedPaymentSchemes = AllowedPaymentSchemes.FasterPayments;
+        return this;
+    }
 
-            return this;
-        }
+    public AccountBuilder WithInsufficientFunds()
+    {
+        _account.Balance = -1;
 
-        public AccountBuilder WithInsufficientFunds()
-        {
-            _account.Balance = -1;
+        return this;
+    }
 
-            return this;
-        }
+    public AccountBuilder WithStatusDisabled()
+    {
+        _account.Status = AccountStatus.Disabled;
 
-        public AccountBuilder WithStatusDisabled()
-        {
-            _account.Status = AccountStatus.Disabled;
-
-            return this;
-        }
+        return this;
     }
 }

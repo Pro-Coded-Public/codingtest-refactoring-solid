@@ -1,8 +1,7 @@
-﻿namespace ClearBank.DeveloperTest.Types
+﻿namespace ClearBank.DeveloperTest.Types;
+
+public interface IMakePaymentResult
 {
-    public interface IMakePaymentResult
-    {
-        int FailureCode { get; }
-        bool Success { get; }
-    }
+    int FailureCode { get; }
+    bool Success { get; }
 }

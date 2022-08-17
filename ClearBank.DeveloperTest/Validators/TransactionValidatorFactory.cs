@@ -1,14 +1,10 @@
-﻿namespace ClearBank.DeveloperTest.Validators
+﻿namespace ClearBank.DeveloperTest.Validators;
+
+public static class TransactionValidatorFactory
 {
-    public static class TransactionValidatorFactory
-    {
-        public static ITransactionValidator CreateBacsTransactionValidator()
-        { return new BacsTransactionValidator(); }
+    public static ITransactionValidator CreateBacsTransactionValidator() => new BacsTransactionValidator();
 
-        public static ITransactionValidator CreateChapsTransactionValidator()
-        { return new ChapsTransactionValidator(); }
+    public static ITransactionValidator CreateChapsTransactionValidator() => new ChapsTransactionValidator();
 
-        public static ITransactionValidator CreateFasterPaymentsTransactionValidator()
-        { return new FasterPaymentsTransactionValidator(); }
-    }
+    public static ITransactionValidator CreateFasterPaymentsTransactionValidator() => new FasterPaymentsTransactionValidator();
 }

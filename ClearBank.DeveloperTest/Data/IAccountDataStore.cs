@@ -1,11 +1,8 @@
-﻿using ClearBank.DeveloperTest.Types;
+﻿namespace ClearBank.DeveloperTest.Data;
 
-namespace ClearBank.DeveloperTest.Data
+public interface IAccountDataStore
 {
-    public interface IAccountDataStore
-    {
-        Account GetAccount(string accountNumber);
+    Account GetAccount(string accountNumber);
 
-        void UpdateAccount(Account account);
-    }
+    void UpdateAccount(Account account);
 }
