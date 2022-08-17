@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/mcquiggd/codingtest-refactoring-solid/maintainability"><img src="https://api.codeclimate.com/v1/badges/649c7e8e98a47e7ea5f1/maintainability" /></a>
+
 # ClearBank.DeveloperTest
 
 ## Steps taken, as part of the refactoring process
